@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: "./dist",
-    open: true,
+    open: false,
     compress: true,
     hot: true,
     port: 8080,
