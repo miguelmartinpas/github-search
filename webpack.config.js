@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     // Set the mode to development or production
@@ -13,7 +14,7 @@ module.exports = {
     // Spin up a server for quick development
     devServer: {
         historyApiFallback: true,
-        contentBase: './dist',
+        contentBase: path.resolve(__dirname, 'dist'),
         open: false,
         compress: true,
         hot: true,
@@ -25,7 +26,7 @@ module.exports = {
 
     // Where webpack outputs the assets and bundles
     output: {
-        path: '/dist',
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js',
         publicPath: '/',
     },
