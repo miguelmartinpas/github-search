@@ -1,11 +1,11 @@
 import React from "react";
 
-interface Props {
+export interface ISearch {
   value?: string;
   onChange: (value: string) => void;
 }
 
-const Search = ({ value = "", onChange }: Props) => {
+const Search = ({ value = "", onChange }: ISearch) => {
   return (
     <div>
       <input
