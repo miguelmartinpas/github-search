@@ -1,4 +1,5 @@
 import React from 'react';
+import './Table.styles.css';
 
 export interface Iitem {
     name: string;
@@ -11,21 +12,21 @@ interface Props {
 
 const Table = ({ items }: Props): React.ReactElement => {
     const renderHeader = (): React.ReactElement => (
-        <div>
-            <div>Name</div> <div>Url</div>
+        <div className="header">
+            <div className="item">Name</div> <div className="item">Url</div>
         </div>
     );
 
     const renderBody = (): React.ReactElement[] =>
         items.map(({ name, url }: Iitem, index: number) => (
-            <div key={`div-${name}`} className={index % 2 === 0 ? 'odd' : 'even'}>
-                <div>{name}</div>
-                <div>{url}</div>
+            <div key={`div-${name}`} className={index % 2 === 0 ? 'body odd' : 'body even'}>
+                <div className="item">{name}</div>
+                <div className="item">{url}</div>
             </div>
         ));
 
     return (
-        <div>
+        <div className="table">
             {renderHeader()}
             {renderBody()}
         </div>
