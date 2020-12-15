@@ -9,11 +9,11 @@ class GithubApi {
     }
 
     public async search(term: string): Promise<any> {
-        const data = await this.get(term);
+        const data = await this.getData(term);
         return this.parserData(data);
     }
 
-    private async get(term: string): Promise<any[]> {
+    private async getData(term: string): Promise<any[]> {
         const response = await fetch(this.getUrl(term));
         const json = await response.json();
         return json.items;
