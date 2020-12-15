@@ -1,4 +1,4 @@
-import Search, {ISearch} from "./Search";
+import Search, { ISearch } from './Search';
 
 export type { ISearch };
 

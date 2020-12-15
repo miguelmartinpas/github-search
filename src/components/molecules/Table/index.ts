@@ -1,4 +1,4 @@
-import Table, { Iitem } from "./Table";
+import Table, { Iitem } from './Table';
 
 export type { Iitem };
 
