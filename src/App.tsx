@@ -13,6 +13,8 @@ interface State {
 class App extends React.Component<Props, State> {
     private gitGithubApi: GithubApi;
 
+    private minCharsToSearch: number;
+
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -20,21 +22,25 @@ class App extends React.Component<Props, State> {
             items: [],
         };
         this.gitGithubApi = new GithubApi();
+        this.minCharsToSearch = 3;
     }
 
+    private onChangeValueToSearch = (term: string) => {
+        this.setState({ term });
+        if (this.hasMinimumCharsToSearch(term)) {
+            this.gitGithubApi.search(term).then((items) => this.setState({ items }));
+        }
+    };
+
+    private hasMinimumCharsToSearch = (term: string): boolean => {
+        return term.length > this.minCharsToSearch;
+    };
+
     public render(): React.ReactElement {
-        const onChange = (term: string) => {
-            this.setState({ term });
-            if (term.length > 3) {
-                this.gitGithubApi.search(term).then((items) => this.setState({ items }));
-            }
-        };
-
         const { term, items } = this.state;
-
         return (
             <div>
-                <Search value={term} onChange={onChange} />
+                <Search value={term} onChange={this.onChangeValueToSearch} />
                 <Table items={items} />
             </div>
         );

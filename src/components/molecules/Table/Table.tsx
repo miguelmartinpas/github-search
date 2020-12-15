@@ -11,13 +11,13 @@ interface Props {
 }
 
 const Table = ({ items }: Props): React.ReactElement => {
-    const renderHeader = (): React.ReactElement => (
+    const renderHeaderOfTable = (): React.ReactElement => (
         <div className="header">
             <div className="item">Name</div> <div className="item">Url</div>
         </div>
     );
 
-    const renderBody = (): React.ReactElement[] =>
+    const renderBodyOfTable = (): React.ReactElement[] =>
         items.map(({ name, url }: Iitem, index: number) => (
             <div key={`div-${name}`} className={index % 2 === 0 ? 'body odd' : 'body even'}>
                 <div className="item">{name}</div>
@@ -27,8 +27,8 @@ const Table = ({ items }: Props): React.ReactElement => {
 
     return (
         <div className="table">
-            {renderHeader()}
-            {renderBody()}
+            {renderHeaderOfTable()}
+            {renderBodyOfTable()}
         </div>
     );
 };

@@ -7,15 +7,13 @@ export interface ISearch {
 
 const Search = ({ value = '', onChange }: ISearch): React.ReactElement => {
     return (
-        <div>
-            <input
-                type="text"
-                value={value}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                    onChange(event.currentTarget.value);
-                }}
-            />
-        </div>
+        <input
+            type="text"
+            value={value}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                onChange(event.currentTarget.value);
+            }}
+        />
     );
 };
 
