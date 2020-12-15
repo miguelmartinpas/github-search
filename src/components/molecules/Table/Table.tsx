@@ -1,5 +1,5 @@
 import React from 'react';
-import './Table.styles.css';
+import './Table.styles.less';
 
 export interface Iitem {
     name: string;
