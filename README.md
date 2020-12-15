@@ -7,6 +7,7 @@ I have used
 -   clean code: https://softwarecrafters.io/javascript/clean-code-javascript
 -   atomic design: https://atomicdesign.bradfrost.com/chapter-2/
 -   UT: jest and enzyme
+-   prettier and eslint
 
 ## Requirements.
 
@@ -49,4 +50,4 @@ npm run lint
 -   src/components/molecules/Search/Search.test.ts -> UT for this component
 -   src/components/molecules/Table
 -   src/components/molecules/Table/Search.tsx -> table component
--   src/components/molecules/Table/Search.styles.css -> responsive styles for table
+-   src/components/molecules/Table/Search.styles.less -> responsive styles for table
