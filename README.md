@@ -39,10 +39,14 @@ npm run lint
 
 ## Structure.
 
-src/
-src/App.tsx -> main app
-src/services/GithubApi/GithubApi.ts -> class to connect to github
-src/components/molecules/Search/Search.tsx -> search input component
-src/components/molecules/Search/Search.test.ts -> UT for this component
-src/components/molecules/Table/Search.tsx -> table component
-src/components/molecules/Table/Search.styles.css -> responsive styles for table
+-   src/
+-   src/App.tsx -> main app
+-   src/services
+-   src/services/GithubApi/GithubApi.ts -> class to connect to github
+-   src/components/molecules
+-   src/components/molecules/Search
+-   src/components/molecules/Search/Search.tsx -> search input component
+-   src/components/molecules/Search/Search.test.ts -> UT for this component
+-   src/components/molecules/Table
+-   src/components/molecules/Table/Search.tsx -> table component
+-   src/components/molecules/Table/Search.styles.css -> responsive styles for table
