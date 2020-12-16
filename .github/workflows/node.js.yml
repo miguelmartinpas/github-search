@@ -25,9 +25,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - run: npm ci
-            - run: npm test:coverage
+            - run: npm test
             - run: npm run build
-            - run: mv ./coverage/lcov-report ./dist/coverage
+            - run: npm run deploy:coverage
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@3.7.1
               with:
