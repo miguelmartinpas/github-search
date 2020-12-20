@@ -46,6 +46,10 @@ npm run test:coverage
 npm run lint
 ```
 
+## Mixin
+
+check file src/components/molecules/DynamicTable/DynamicTable.styles.less
+
 ## Structure.
 
 -   src/

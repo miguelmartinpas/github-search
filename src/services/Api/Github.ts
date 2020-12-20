@@ -32,7 +32,7 @@ class Github {
     // Parser: try to return only the necessary data
     // eslint-disable-next-line class-methods-use-this
     private parserData(items: any[]): any[] {
-        return items.map((item: any) => ({ key: item.name, url: item.html_url }));
+        return items.map((item: any) => ({ id: item.name, url: item.html_url }));
     }
 
     // get url of github API
