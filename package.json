@@ -13,7 +13,8 @@
         "test": "jest --coverage=false --detectOpenHandles",
         "test:coverage": "jest --coverage=true --detectOpenHandles",
         "test:watch": "jest --watch --coverage=false --detectOpenHandles",
-        "test:debug": "jest -o --watch --coverage=false --detectOpenHandles"
+        "test:debug": "jest -o --watch --coverage=false --detectOpenHandles",
+        "coveralls": "coveralls < coverage/lcov.info"
     },
     "repository": {
         "type": "git",
@@ -46,6 +47,7 @@
         "babel-loader": "^8.2.2",
         "clean-webpack-plugin": "^3.0.0",
         "copy-webpack-plugin": "^7.0.0",
+        "coveralls": "^3.1.0",
         "css-loader": "^5.0.1",
         "enzyme": "3.11.0",
         "enzyme-adapter-react-16": "1.15.5",

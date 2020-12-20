@@ -1,4 +1,5 @@
 import React from 'react';
+import './Search.styles.less';
 
 export interface ISearch {
     value?: string;
@@ -8,6 +9,7 @@ export interface ISearch {
 const Search = ({ value = '', onChange }: ISearch): React.ReactElement => {
     return (
         <input
+            className="ml-search"
             type="text"
             value={value}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {

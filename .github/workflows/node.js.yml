@@ -17,6 +17,7 @@ jobs:
         env:
             DEFAULT_BRANCH: main
             CI: true
+            COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
         steps:
             - uses: actions/checkout@v2
@@ -25,7 +26,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - run: npm ci
-            - run: npm test
+            - run: npm run lint
+            - run: npm test:coverage
+            - run: npm run coveralls
             - run: npm run build
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@3.7.1
