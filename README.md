@@ -12,6 +12,7 @@ I have used
 -   github pages (https://miguelmartinpas.github.io/github-search/)
 -   Webpack + babel
 -   Coveralls: to check coverage (https://coveralls.io/github/miguelmartinpas/github-search)
+-   Responsive with flex
 
 ## Requirements.
 
