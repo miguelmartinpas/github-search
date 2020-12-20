@@ -7,7 +7,7 @@ import Dashboard from './index';
 Enzyme.configure({ adapter: new Adapter() });
 
 const mockGet = jest.fn().mockImplementation(() => Promise.resolve({}));
-jest.mock('../../../services/GithubApi/GithubApi', () => {
+jest.mock('../../../services/Api/Github', () => {
     class MockGithubApi {
         // eslint-disable-next-line class-methods-use-this
         public get() {
