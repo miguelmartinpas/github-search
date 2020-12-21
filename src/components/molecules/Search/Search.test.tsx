@@ -1,6 +1,7 @@
 import React from 'react';
 import Enzyme, { mount, ReactWrapper } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { act } from 'react-dom/test-utils';
 import 'jest-enzyme';
 import Search, { ISearch } from './index';
 
@@ -34,15 +35,15 @@ describe('Search Component', () => {
         it('WHEN change input THEN mockOnChange should be called', () => {
             renderComponent();
 
-            const event = {
+            const clickEvent = {
                 currentTarget: {
-                    value: 'foo-bar',
+                    tagName: 'Search',
                 },
-            } as React.ChangeEvent<HTMLInputElement>;
+            } as React.MouseEvent<HTMLButtonElement>;
 
-            const { onChange = jest.fn() } = component.find('input').at(0).props();
-            onChange(event);
-            expect(mockOnChange).toHaveBeenLastCalledWith('foo-bar');
+            const { onClick = jest.fn() } = component.find('button').at(0).props();
+            onClick(clickEvent);
+            expect(mockOnChange).toHaveBeenLastCalledWith('');
         });
     });
 });

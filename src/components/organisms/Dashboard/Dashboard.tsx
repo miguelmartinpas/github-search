@@ -8,7 +8,6 @@ import './Dashboard.styles.less';
 interface Props {}
 
 interface State {
-    term: string;
     items: any[];
     loading: boolean;
 }
@@ -21,7 +20,6 @@ class Dashboard extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            term: '',
             items: [],
             loading: false,
         };
@@ -30,26 +28,19 @@ class Dashboard extends React.Component<Props, State> {
     }
 
     private onChangeValueToSearch = (term: string) => {
-        this.setState({ term });
-        if (this.hasMinimumCharsToSearch(term)) {
-            this.setState({ loading: true });
-            this.githubApi.search(term).then((items) => this.setState({ items, loading: false }));
-        }
-    };
-
-    private hasMinimumCharsToSearch = (term: string): boolean => {
-        return term.length > this.minCharsToSearch;
+        this.setState({ loading: true });
+        this.githubApi.search(term).then((items) => this.setState({ items, loading: false }));
     };
 
     private renderSearch(): React.ReactElement {
-        const { term, loading } = this.state;
+        const { loading } = this.state;
 
         return (
             <div className="dashboard-header">
                 <div className="dashboard-loading">
                     <Loading width={15} hidden={!loading} />
                 </div>
-                <Search value={term} onChange={this.onChangeValueToSearch} />
+                <Search value="" onChange={this.onChangeValueToSearch} />
             </div>
         );
     }
