@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/miguelmartinpas/github-search/badge.svg?branch=main)](https://coveralls.io/github/miguelmartinpas/github-search?branch=main)
+
 # github-search
 
 App in typescript with webpack and jest (UT) to search data in github
